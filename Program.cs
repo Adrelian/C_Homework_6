@@ -31,26 +31,27 @@
 
 void pointIntescetionStraightLine()
 {
+
+
     // Пользовательский ввод данных прямых линий
     Console.WriteLine("Введите коэффициент k1 ");
-    int k1 = Convert.ToInt32(Console.ReadLine());
+    double k1 = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Введите коэффициент b1 ");
-    int b1 = Convert.ToInt32(Console.ReadLine());
+    double b1 = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Введите коэффициент k2 ");
-    int k2 = Convert.ToInt32(Console.ReadLine());
+    double k2 = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Введите коэффициент b2 ");
-    int b2 = Convert.ToInt32(Console.ReadLine());
+    double b2 = Convert.ToInt32(Console.ReadLine());
 
-    // Решение системы из двух уравнений
-    // y = k1 * x + b1
-    // y = k2 * x + b2
+    // Формула для нахождения точки
+    double x = (b2 - b1) / (k1 - k2);
+    double y = k1 * x + b1;
 
-    int x; int y; // Координаты точки пересечения прямых
-    
-    y = k1 * (b1 - y)/k1 + b1;
+    //округляем до двух знаков
+    x = Math.Round(x, 2);
+    y = Math.Round(y ,2);
 
     Console.WriteLine($"Координаты точки {x} {y}");
-
 }
 
 pointIntescetionStraightLine();
